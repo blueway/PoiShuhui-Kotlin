@@ -27,7 +27,7 @@ import java.util.*
  */
 class HomeFragment : Fragment() {
   companion object {
-    val AIM_URL = "http://ishuhui.net/?PageIndex=1"
+    val AIM_URL = "http://www.ishuhui.net/ComicBooks/GetAllBook/?PageIndex=1"
   }
 
   var mData = ArrayList<Cover>()

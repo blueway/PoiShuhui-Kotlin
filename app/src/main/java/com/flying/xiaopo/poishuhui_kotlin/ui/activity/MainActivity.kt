@@ -19,7 +19,7 @@ import java.util.*
 class MainActivity : AppCompatActivity() {
 
   companion object {
-    val GITHUB_URL = "https://github.com/wuapnjie/PoiShuhui-Kotlin"
+    val GITHUB_URL = "https://github.com/bluesway/PoiShuhui-Kotlin"
   }
 
   val nameResList: ArrayList<Int> = arrayListOf(R.string.tab_one, R.string.tab_two, R.string.tab_three)

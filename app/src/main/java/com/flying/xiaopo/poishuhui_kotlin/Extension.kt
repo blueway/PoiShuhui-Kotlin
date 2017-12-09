@@ -36,7 +36,9 @@ fun getHtml(url: String): String {
       .build()
 
   val response = client.newCall(request).execute()
-  return response.body()?.string() ?: ""
+  val ret = response.body()?.string() ?: ""
+  ret.log(url+":req:"+ret) 
+  return ret
 }
 
 fun WebView.load(html: String) {

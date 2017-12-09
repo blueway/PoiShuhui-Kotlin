@@ -33,17 +33,20 @@ class ComicActivity : AppCompatActivity() {
     comicPagers.offscreenPageLimit = 2
 
   }
+  fun loadPage(){
+     doAsync {
+        val data = ComicSource().obtain(url)
+        mData = data
 
+        uiThread {
+           adapter.refreshData(data)
+        }
+     }
+
+  }
   override fun onResume() {
     super.onResume()
-    doAsync {
-      val data = ComicSource().obtain(url)
-      mData = data
-
-      uiThread {
-        adapter.refreshData(data)
-      }
-    }
+    loadPage()
   }
 
   inner class ComicPagerAdapter(var data: ArrayList<Comic> = ArrayList<Comic>(), fragmentManager: FragmentManager) :
