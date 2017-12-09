@@ -25,9 +25,9 @@ import java.util.*
  * Second page
  * @author wupanjie
  */
-class BookFragment : Fragment() {
+class BookFragment(val tp:Int) : Fragment() {
   companion object {
-    val AIM_URL = "http://ishuhui.net/ComicBookList/"
+    val AIM_URL = "http://www.ishuhui.net/ComicBooks/GetAllBook?ClassifyId="
   }
 
   var mData = ArrayList<Cover>()
@@ -92,7 +92,7 @@ class BookFragment : Fragment() {
 
   private fun load() {
     doAsync {
-      val data = BookSource().obtain(AIM_URL)
+      val data = BookSource().obtain(AIM_URL+tp)
 
       uiThread {
         mData = data

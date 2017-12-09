@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     val GITHUB_URL = "https://github.com/bluesway/PoiShuhui-Kotlin"
   }
 
-  val nameResList: ArrayList<Int> = arrayListOf(R.string.tab_one, R.string.tab_two, R.string.tab_three)
+  val nameResList: ArrayList<Int> = arrayListOf(R.string.tab_one, R.string.tab_cate0,  R.string.tab_cate2, R.string.tab_cate3, R.string.tab_three)
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -39,7 +39,10 @@ class MainActivity : AppCompatActivity() {
 
 
     fragments.add(HomeFragment())
-    fragments.add(BookFragment())
+    fragments.add(BookFragment(0))
+    /*fragments.add(BookFragment(1))*/
+    fragments.add(BookFragment(2))
+    fragments.add(BookFragment(3))
     fragments.add(NewsFragment())
 
 

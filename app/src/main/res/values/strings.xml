@@ -6,7 +6,10 @@
 	<string name="action_about">萌萌嗒关于页面</string>
 
 	<string name="tab_one">在线漫画</string>
-	<string name="tab_two">漫画列表</string>
+	<string name="tab_cate0">热血列表</string>
+	<string name="tab_cate1">国产列表</string>
+	<string name="tab_cate2">同人列表</string>
+	<string name="tab_cate3">鼠绘列表</string>
 	<string name="tab_three">动漫资讯</string>
 
 	<string name="network_error">网络加载失败，请重试！</string>

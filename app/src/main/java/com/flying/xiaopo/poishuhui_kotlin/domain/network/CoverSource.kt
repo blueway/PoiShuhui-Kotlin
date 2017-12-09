@@ -10,6 +10,7 @@ import com.beust.klaxon.*
  * @author wupanjie
  */
 class CoverSource : Source<ArrayList<Cover>> {
+  val LAST_CHAPTER_URL = "http://www.ishuhui.net/ComicBooks/GetLastChapterForBookIds?idjson="
   override fun obtain(url: String): ArrayList<Cover> {
     val list = ArrayList<Cover>()
 
@@ -24,7 +25,7 @@ class CoverSource : Source<ArrayList<Cover>> {
       val coverUrl = it.string("FrontCover")!!//element.select("img").attr("src")
       val title = it.string("Title")!!//element.select("h1").text() + "\n" + element.select("h2").text()
       val id = it.int("Id")!!
-      val link = "http://www.ishuhui.net/ComicBooks/GetChapterList?id="+id//"http://ishuhui.net" + element.select("div.magesPhoto").select("a").attr("href")
+      val link = LAST_CHAPTER_URL+"["+id+"]"
       val cover = Cover(coverUrl, title, link)
       list.add(cover)
     }
